@@ -13,6 +13,7 @@ import java.time.Instant;
 @Table(name = "state", schema = "real_estate_mvp")
 public class State {
     @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name = "state_id", nullable = false)
     private Integer id;
 
