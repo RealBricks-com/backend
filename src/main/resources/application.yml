@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://realbricksdb-gamify.d.aivencloud.com:12183/defaultdb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-    username: avnadmin
-    password: AVNS_xcoFUIS6alzL6A_DCuf
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -16,12 +16,6 @@ spring:
   security:
     enabled: false
 
-sendgrid:
-  api-key: ${SENDGRID_API_KEY}
-cloudinary:
-  cloud-name: ${CLOUDINARY_CLOUD_NAME}
-  api-key: ${CLOUDINARY_API_KEY}
-  api-secret: ${CLOUDINARY_API_SECRET}
 jwt:
   secret: ${JWT_SECRET}
   expiration: 86400000 # 1 day in milliseconds
