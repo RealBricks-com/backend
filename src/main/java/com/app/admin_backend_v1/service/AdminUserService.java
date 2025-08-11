@@ -36,6 +36,8 @@ public class AdminUserService {
     public AdminUserResponseDTO login(AdminUserLoginRequestDTO dto) {
         AdminUser user = adminUserRepository.findByEmail(dto.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
+
+
         if (!passwordEncoder.matches(dto.getPassword(), user.getPasswordHash())) {
             throw new RuntimeException("Invalid credentials");
         }
